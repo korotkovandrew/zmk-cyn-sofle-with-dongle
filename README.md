@@ -3,4 +3,4 @@ Sofle, Soufflé and CYN Sofle(Mini Sofle) wireless split keyboard test ZMK firmw
 
 Support editing keymap via https://nickcoutsos.github.io/keymap-editor/ and via https://zmk.studio/ ZMK Studio.
 
-Dongle mode: nRF52840 nice!nano and analogue MCU connected via USB to PC.
+BLE Dongle mode: nRF52840 nice!nano and analogue MCU connected via USB to PC.
