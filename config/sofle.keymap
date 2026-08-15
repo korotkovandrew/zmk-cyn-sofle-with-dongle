@@ -9,10 +9,12 @@
  *     ряд 3 : 6 + [2] + 6   = 14   <- [2] у внутреннего края, приподняты
  *     палец : 5 + 5         = 10
  *
- * Раскладка перенесена со старой Vial-клавиатуры. Три клавиши бывших
- * внутренних колонок разложены так:
+ * Клавиши бывших внутренних колонок старой платы:
  *     TG2 / TG3   -> две центральные клавиши 3-го ряда
  *     TO0 (Сброс) -> крайняя правая клавиша большого пальца
+ *
+ * ИЗМЕНЕНО: Ctrl теперь на крайней клавише большого пальца (нижний левый
+ * угол), Win ушёл на мизинец в левую внешнюю колонку.
  */
 
 #include <behaviors.dtsi>
@@ -34,8 +36,8 @@
 &kp ESC    &kp N1  &kp N2  &kp N3  &kp N4  &kp N5                        &kp N6  &kp N7  &kp N8     &kp N9   &kp N0    &kp BSPC
 &kp TAB    &kp Q   &kp W   &kp E   &kp R   &kp T                         &kp Y   &kp U   &kp I      &kp O    &kp P     &kp DEL
 &kp LSHFT  &kp A   &kp S   &kp D   &kp F   &kp G                         &kp H   &kp J   &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LCTRL  &kp Z   &kp X   &kp C   &kp V   &kp B   &tog 2      &tog 3    &kp N   &kp M   &kp COMMA  &kp DOT  &kp FSLH  &kp BSLH
-                   &kp LGUI  &kp LALT  &kp LG(SPACE)  &mo 2  &kp SPACE    &kp RET  &mo 1  &kp LBKT  &kp RBKT  &to 0
+&kp LGUI   &kp Z   &kp X   &kp C   &kp V   &kp B   &tog 2      &tog 3    &kp N   &kp M   &kp COMMA  &kp DOT  &kp FSLH  &kp BSLH
+                   &kp LCTRL  &kp LALT  &kp LG(SPACE)  &mo 2  &kp SPACE    &kp RET  &mo 1  &kp LBKT  &kp RBKT  &to 0
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
