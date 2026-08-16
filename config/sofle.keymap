@@ -20,6 +20,25 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
+#include <dt-bindings/zmk/mouse.h>
+
+
+// Настройки мыши
+// Высокая скорость, но с плавным разгоном
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 1800  // быстрый курсор
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 20    // комфортная прокрутка
+
+&mmv {
+    time-to-max-speed-ms = <500>;  // плавный разгон ~0.5 с
+    acceleration-exponent = <1>;   // линейное ускорение, предсказуемое
+    delay-ms = <0>;
+};
+
+&msc {
+    time-to-max-speed-ms = <300>;
+    acceleration-exponent = <0>;   // прокрутка без ускорения
+    delay-ms = <0>;
+};
 
 / {
     macros {
