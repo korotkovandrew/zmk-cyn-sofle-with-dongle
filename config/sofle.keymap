@@ -17,14 +17,14 @@
  * угол), Win ушёл на мизинец в левую внешнюю колонку.
  */
 
+#include <dt-bindings/zmk/mouse.h>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
-#include <dt-bindings/zmk/mouse.h>
-
 
 // Настройки мыши
 // Высокая скорость, но с плавным разгоном
+
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 1800  // быстрый курсор
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 20    // комфортная прокрутка
 
@@ -54,6 +54,13 @@
             #binding-cells = <0>;
             bindings = <&kp COLON &kp COLON>;
             label = "MCR2";
+        };
+
+        MCR3: MCR3 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(ENTER) &kp LEFT_BRACE &kp ENTER>;
+            label = "MCR3";
         };
     };
 
@@ -91,9 +98,9 @@
             display-name = "Навигационный";
             bindings = <
 &kp F1  &kp F2         &kp F3              &kp F4          &kp F5               &kp F6         &kp F7       &kp F8          &kp F9          &kp F10          &kp F11        &kp F12
-&trans  &kp HOME       &kp LC(LEFT_ARROW)  &kp UP_ARROW    &kp LC(RIGHT_ARROW)  &kp END        &kp PAGE_UP  &msc SCRL_UP    &mmv MOVE_UP    &msc SCRL_DOWN   &kp PAGE_DOWN  &kp K_PREV
-&trans  &kp LC(Z)      &kp LEFT_ARROW      &kp DOWN_ARROW  &kp RIGHT_ARROW      &kp LC(LS(Z))  &none        &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none          &kp K_PLAY_PAUSE
-&trans  &kp BACKSPACE  &kp LC(X)           &kp LC(C)       &kp LC(V)            &kp DEL        &trans       &trans          &none           &mkp MCLK        &none          &none             &none  &kp K_NEXT
+&trans  &kp HOME       &kp LC(LEFT_ARROW)  &kp UP_ARROW    &kp LC(RIGHT_ARROW)  &kp END        &kp PAGE_UP  &msc SCRL_UP    &mmv MOVE_UP    &msc SCRL_DOWN   &kp PAGE_DOWN  &none
+&trans  &kp LC(Z)      &kp LEFT_ARROW      &kp DOWN_ARROW  &kp RIGHT_ARROW      &kp LC(LS(Z))  &none        &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none          &none
+&trans  &kp BACKSPACE  &kp LC(X)           &kp LC(C)       &kp LC(V)            &kp DEL        &trans       &trans          &none           &mkp MCLK        &none          &none    &none  &none
 &trans  &trans         &trans              &none           &trans               &none          &mkp LCLK    &mkp RCLK       &none           &kp PRINTSCREEN
             >;
 
@@ -113,9 +120,9 @@
         symbol_layer {
             display-name = "Символьный";
             bindings = <
-&none   &none            &none          &none             &none              &none           &none          &none      &none                 &none                  &none           &none
-&trans  &kp SQT          &kp LESS_THAN  &kp GREATER_THAN  &kp DOUBLE_QUOTES  &kp DOT         &kp AMPERSAND  &MCR2      &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp PERCENT     &MCR1
-&trans  &kp EXCLAMATION  &kp MINUS      &kp PLUS          &kp EQUAL          &kp UNDERSCORE  &kp PIPE       &kp COLON  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp QUESTION    &none
+&none   &none            &none          &none             &none              &none           &none          &none      &none                 &none                  &none           &trans
+&trans  &kp SQT          &kp LESS_THAN  &kp GREATER_THAN  &kp DOUBLE_QUOTES  &kp DOT         &kp AMPERSAND  &MCR2      &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp PERCENT     &MCR3
+&trans  &kp EXCLAMATION  &kp MINUS      &kp PLUS          &kp EQUAL          &kp UNDERSCORE  &kp PIPE       &kp COLON  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp QUESTION    &MCR1
 &trans  &kp CARET        &kp SLASH      &kp ASTERISK      &kp BACKSLASH      &kp HASH        &trans         &trans     &kp TILDE             &kp DOLLAR             &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp AT_SIGN  &none
 &trans  &trans           &trans         &trans            &none              &trans          &none          &none      &none                 &none
             >;
