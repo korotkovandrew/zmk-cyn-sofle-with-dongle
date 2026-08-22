@@ -1,32 +1,11 @@
-/*
- * CYN Sofle (Mini Sofle / Sofle60), донгл-вариант — 60 клавиш
- *
- * Порядок биндингов проверен по config/sofle.keymap из репозитория
- * pekorali/zmk-cyn-sofle-with-dongle:
- *     ряд 0 : 6 + 6         = 12
- *     ряд 1 : 6 + 6         = 12
- *     ряд 2 : 6 + 6         = 12
- *     ряд 3 : 6 + [2] + 6   = 14   <- [2] у внутреннего края, приподняты
- *     палец : 5 + 5         = 10
- *
- * Клавиши бывших внутренних колонок старой платы:
- *     TG2 / TG3   -> две центральные клавиши 3-го ряда
- *     TO0 (Сброс) -> крайняя правая клавиша большого пальца
- *
- * ИЗМЕНЕНО: Ctrl теперь на крайней клавише большого пальца (нижний левый
- * угол), Win ушёл на мизинец в левую внешнюю колонку.
- */
-
-#include <dt-bindings/zmk/mouse.h>
-#include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/pointing.h>
-
 // Настройки мыши
-// Высокая скорость, но с плавным разгоном
-
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 1800  // быстрый курсор
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 20    // комфортная прокрутка
+
+#include <dt-bindings/zmk/mouse.h>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/pointing.h>
+#include <behaviors.dtsi>
 
 &mmv {
     time-to-max-speed-ms = <500>;  // плавный разгон ~0.5 с
