@@ -19,19 +19,18 @@
     delay-ms = <0>;
 };
 
-ht: hold_tap_thumb {
-    compatible = "zmk,behavior-hold-tap";
-    #binding-cells = <2>;
-    bindings = <&kp>, <&kp>;
-    flavor = "tap-preferred";
-    tapping-term-ms = <220>;
-    quick-tap-ms = <150>;
-};
-
 / {
     behaviors {
-        // Левая рука: мод срабатывает, только если следующая клавиша справа
+        ht: hold_tap_thumb {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            bindings = <&kp>, <&kp>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <220>;
+            quick-tap-ms = <150>;
+        };
 
+        // Левая рука: мод срабатывает, только если следующая клавиша справа
         hml: home_row_mod_left {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -52,7 +51,6 @@ ht: hold_tap_thumb {
         };
 
         // Правая рука: зеркально
-
         hmr: home_row_mod_right {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
