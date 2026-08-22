@@ -1,4 +1,4 @@
-# Конфиг ZMK для Sofle CYN 60 (версия с dongle)
+# Vibe-конфиг ZMK для Sofle CYN 60 (версия с dongle)
 
 Подходит под nRF52840 nice!nano или аналогичный контроллер.
 
